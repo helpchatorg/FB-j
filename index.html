@@ -381,20 +381,19 @@
             color: var(--primary); text-decoration: underline;
         }
 
-        .login-action-row { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:8px; margin-top:16px; padding-top:14px; border-top:1px dashed var(--border); }
-        .login-action-btn { margin:0; width:100%; min-width:0; height:74px; padding:8px 4px; border-radius:12px; background:#fff; color:var(--primary-dark); border:1.5px solid #e0e7ff; box-shadow:0 2px 8px rgba(79,70,229,0.08); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; text-align:center; font-size:0.6rem; font-weight:800; line-height:1.25; letter-spacing:0; transition:transform .15s, box-shadow .15s, border-color .15s; }
-        .login-action-btn .lab-ic { width:26px; height:26px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.9rem; background:#eef2ff; }
+        .login-action-row { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:14px; padding-top:12px; border-top:1px dashed var(--border); }
+        .login-action-btn { margin:0; flex:0 0 calc(33.333% - 6px); min-width:0; height:64px; padding:6px 4px; border-radius:12px; background:#fff; color:var(--primary-dark); border:1.5px solid #e0e7ff; box-shadow:0 2px 8px rgba(79,70,229,0.06); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; text-align:center; font-size:0.56rem; font-weight:800; line-height:1.2; letter-spacing:0; transition:transform .15s, box-shadow .15s, border-color .15s; }
+        .login-action-btn .lab-ic { width:22px; height:22px; border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:0.78rem; background:#eef2ff; }
         .login-action-btn:hover { background:#fff; transform:translateY(-2px); border-color:#a5b4fc; box-shadow:0 6px 16px rgba(79,70,229,0.16); }
         .login-action-btn:active { transform:scale(.97); }
-        .login-action-btn.wide { background:linear-gradient(135deg,#0ea5e9,#2563eb); color:#fff; border-color:transparent; box-shadow:0 6px 16px rgba(14,165,233,0.35); }
+        .login-action-btn.wide { background:linear-gradient(135deg,#0ea5e9,#2563eb); color:#fff; border-color:transparent; box-shadow:0 4px 12px rgba(14,165,233,0.3); }
         .login-action-btn.wide .lab-ic { background:rgba(255,255,255,0.22); }
         .login-action-btn.wide:hover { background:linear-gradient(135deg,#0284c7,#1d4ed8); border-color:transparent; }
         .login-action-btn.fb .lab-ic { background:#fef3c7; }
         .login-action-btn.pol .lab-ic { background:#dcfce7; }
-        .login-action-btn.wl { grid-column:1 / -1; height:46px; flex-direction:row; gap:8px; font-size:0.72rem; background:#fffbeb; border-color:#fcd34d; color:#92400e; }
-        .login-action-btn.wl .lab-ic { background:#fef3c7; width:24px; height:24px; }
-        .login-action-btn.att { grid-column:1 / -1; height:46px; flex-direction:row; gap:8px; font-size:0.72rem; background:#eff6ff; border-color:#93c5fd; color:#1d4ed8; }
-        .login-action-btn.att .lab-ic { background:#dbeafe; width:24px; height:24px; }
+        .login-action-btn.wl .lab-ic { background:#fef9c3; }
+        .login-action-btn.att .lab-ic { background:#dbeafe; }
+
 
 
         .wallet-epoch-divider { display:flex; align-items:center; gap:8px; margin:10px 0; color:#6366f1; font-size:0.68rem; font-weight:800; text-align:center; }
@@ -3227,10 +3226,10 @@
                 <button class="help-btn-login" onclick="openHelpCenter()">🎧 Help & Support Center</button>
                 <button onclick="toggleLoginType('admin')" class="btn-link">Switch to Admin Dashboard</button>
                 <div class="login-action-row">
-                    <button type="button" class="login-action-btn wide" onclick="openCheckSeatAvailabilityModal(true)"><span class="lab-ic">&#128269;</span><span>Check Seat Availability</span></button>
+                    <button type="button" class="login-action-btn wide" onclick="openCheckSeatAvailabilityModal(true)"><span class="lab-ic">&#128269;</span><span>Seat Availability</span></button>
                     <button type="button" class="login-action-btn fb" onclick="openPublicFeedback()"><span class="lab-ic">&#128172;</span><span>Feedback</span></button>
                     <button type="button" class="login-action-btn pol" onclick="SamPolicy.openInfo('student')"><span class="lab-ic">&#128220;</span><span>View Policies &amp; Terms</span></button>
-                    <button type="button" class="login-action-btn wl" onclick="openWlStatusCheck()"><span class="lab-ic">&#9203;</span><span>Check Waiting List Status</span></button>
+                    <button type="button" class="login-action-btn wl" onclick="openWlStatusCheck()"><span class="lab-ic">&#9203;</span><span>Waiting List</span></button>
                     <button type="button" class="login-action-btn att" onclick="openMarkAttendanceModal()"><span class="lab-ic">&#9989;</span><span>Mark Attendance</span></button>
                 </div>
             </div>
@@ -3252,10 +3251,10 @@
                 <button class="help-btn-login" onclick="openAdminHelpCenter()">🎧 Help &amp; Support Center</button>
                 <button onclick="toggleLoginType('student')" class="btn-link">Switch to Student Dashboard</button>
                 <div class="login-action-row">
-                    <button type="button" class="login-action-btn wide" onclick="openCheckSeatAvailabilityModal(true)"><span class="lab-ic">&#128269;</span><span>Check Seat Availability</span></button>
+                    <button type="button" class="login-action-btn wide" onclick="openCheckSeatAvailabilityModal(true)"><span class="lab-ic">&#128269;</span><span>Seat Availability</span></button>
                     <button type="button" class="login-action-btn fb" onclick="openPublicFeedback()"><span class="lab-ic">&#128172;</span><span>Feedback</span></button>
                     <button type="button" class="login-action-btn pol" onclick="SamPolicy.openInfo('admin')"><span class="lab-ic">&#128220;</span><span>View Policies &amp; Terms</span></button>
-                    <button type="button" class="login-action-btn wl" onclick="openWlStatusCheck()"><span class="lab-ic">&#9203;</span><span>Check Waiting List Status</span></button>
+                    <button type="button" class="login-action-btn wl" onclick="openWlStatusCheck()"><span class="lab-ic">&#9203;</span><span>Waiting List</span></button>
                     <button type="button" class="login-action-btn att" onclick="openMarkAttendanceModal()"><span class="lab-ic">&#9989;</span><span>Mark Attendance</span></button>
                 </div>
             </div>
